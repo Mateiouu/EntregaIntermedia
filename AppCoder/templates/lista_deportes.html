@@ -1,0 +1,18 @@
+{% extends 'padre.html' %}
+{% load static %}
+
+{% block  content%}
+
+<a href = "{% url 'busquedaDeporte' %}">Buscar Deporte por nombre</a>
+
+<ul>
+
+        
+    {% for dep in lista_deportes %}
+    <li>Nombre:{{dep.nombre}}<br> Incluye:{{dep.incluye}} </li><br>
+    {% endfor %}
+        
+
+</ul>
+
+{% endblock content%}

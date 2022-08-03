@@ -1,0 +1,38 @@
+{% extends 'padre.html' %}
+{% load static %}
+
+{% block  content%}
+
+
+    <h1>Esta es la seccion de los Entrenadores inscriptos</h1>
+
+
+
+
+
+
+
+    <h3>Listado de entrenadores</h3>
+    <a href = "{% url 'lista_entrenadores' %}">Ver el listado de Entrenadores </a>
+
+    <h4>Agregar entrenadores a la BD</h4>
+    
+    
+
+<!-- Aquí va lo que cambia,ylo asociadoaestá vista :) -->
+{% if miFormularioE.errors %}
+<p style="color:red;">Están mal los datos,revisar</p>
+
+{% endif %}                 
+
+<form action=""method="POST">{%csrf_token%}
+    <!-- Acá está la magia de Django -->
+    <table>
+         {{miFormularioE.as_table}}
+    </table>
+    <input type="submit",value="Enviar">
+</form>
+
+
+    {% endblock content %}
+    

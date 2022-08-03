@@ -1,0 +1,24 @@
+{% extends 'padre.html' %}
+{% load static %}
+
+{% block content %}
+<p>Estamos buscando al Atleta:{{nombre}}</p>
+
+
+{%if consulta%}
+<ul>
+{%for run in consulta%}
+    <li>Nombre: {{run.nombre}} <br>Apellido: {{run.apellido}} <br>Diciplina: {{run.diciplina}}</li><br>
+{%endfor%}
+</ul>
+{% else %}
+
+<p>Lo sentimos, ese atleta no esta registrado</p>
+
+
+{%endif%}
+
+
+
+{% endblock content %}
+

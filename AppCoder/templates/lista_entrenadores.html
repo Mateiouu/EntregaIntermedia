@@ -1,0 +1,19 @@
+{% extends 'padre.html' %}
+{% load static %}
+
+{% block  content%}
+
+<a href = "{% url 'busquedaEntrenador' %}">Buscar Entrenador por nombre</a>
+
+
+<ul>
+
+        
+    {% for entr in lista_entrenadores %}
+    <li>Nombre:{{entr.nombre}}<br> Apellido:{{entr.apellido}} <br>Entrena:{{entr.entrena}} </li><br>
+    {% endfor %}
+        
+
+</ul>
+
+{% endblock content%}

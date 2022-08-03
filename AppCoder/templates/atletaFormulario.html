@@ -1,0 +1,17 @@
+{% extends 'padre.html' %}
+{% load static %}
+
+{% block content %}
+<h1>Seccion de Cursos con formularios</h1>
+
+<form action = "{% url 'cursoFormulario' %}" method = "POST">{% csrf_token %}
+    <!-- <p>Curso:<input type = "text" name= "curso"></p>
+    
+    <p>Camada:<input type = "number" name= "camada"></p> -->
+
+    {{miformulario.as_p}}
+    <input type= "submit" value = "Enviar">
+
+</form>
+
+{% endblock content %}

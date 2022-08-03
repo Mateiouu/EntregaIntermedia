@@ -1,0 +1,18 @@
+{% extends 'padre.html' %}
+{% load static %}
+
+{% block content %}
+<p>Estamos buscando al Entrenador:{{nombre}}</p>
+
+{%if consulta%}
+<ul>
+{%for entr in consulta%}
+    <li>Nombre: {{entr.nombre}} <br>Apellido: {{entr.apellido}} <br>Entrena: {{entr.entrena}}</li><br>
+{%endfor%}
+</ul>
+{% else %}
+
+<p>Lo sentimos, ese entrenador no esta registrado</p>
+{%endif%}
+
+{% endblock content %}
